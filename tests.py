@@ -131,19 +131,17 @@ class TestTriangle(unittest.TestCase):
 
     def test_triangle_inequality(self):
         """Тест неравенства треугольника"""
-        # Треугольник существует: сумма любых двух сторон должна быть больше третьей
         with self.assertRaises(ValueError):
-            triangle.perimeter(1, 2, 10)  # 1 + 2 = 3 < 10
+            triangle.perimeter(1, 2, 10) 
         with self.assertRaises(ValueError):
-            triangle.perimeter(1, 10, 2)  # 1 + 2 = 3 < 10
+            triangle.perimeter(1, 10, 2) 
         with self.assertRaises(ValueError):
-            triangle.perimeter(10, 1, 2)  # 1 + 2 = 3 < 10
+            triangle.perimeter(10, 1, 2) 
 
     def test_valid_triangle(self):
         """Тест валидного треугольника"""
-        # Эти комбинации сторон должны быть допустимыми
-        self.assertEqual(triangle.perimeter(3, 4, 5), 12)  # Прямоугольный треугольник
-        self.assertEqual(triangle.perimeter(5, 5, 5), 15)  # Равносторонний треугольник
+        self.assertEqual(triangle.perimeter(3, 4, 5), 12)
+        self.assertEqual(triangle.perimeter(5, 5, 5), 15)
 
 if __name__ == '__main__':
     unittest.main()
